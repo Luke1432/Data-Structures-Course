@@ -1,0 +1,84 @@
+0, Campus Corners, CC
+0, Campus Field House, CFH
+0, Gordon Willey (B Wing), B
+0, Gordon Willey (South Wing), SW
+0, Polonsky Commons, PC
+0, Rec Center (F Wing), F
+0, Rec Center (G Wing), G
+0, Rec Center (Justice Wing), JW
+0, Simcoe Village Central, SVC
+0, Simcoe Village North, SVN
+0, Simcoe Village South, SVS
+0, South Village Residence, SVR
+1, Automotive Centre of Excellence, ACE
+1, Business and IT Building, UB
+1, Clean Energy Research Lab, CERL
+1, Energy Research Center, ERC
+1, English Language Center, ELC
+1, Library, LIB
+1, OPG Engineering Building, ENG
+1, Science Building, UA
+1, Shawenjigewining Hall, SHA
+1, Software and Informatics Research Center, SIRC
+1, University Pavillion, UP
+2, Centre for Innovation and Research, CIR
+2, ESports Arena, ESA
+2, Gordon Willey (A Wing), A
+2, Gordon Willey (C Wing), C
+2, Gordon Willey (D Wing), D
+2, Gordon Willey (H Wing), H
+2, Gordon Willey (I Wing), I
+2, Gordon Willey (L Wing), L
+2, Student Services Building, SSB
+
+A B
+ACE G
+ACE ENG
+B F
+B C
+B SW
+C D
+C L
+CC CFH
+CERL ELC
+CERL ACE
+CFH SIRC
+CIR UB
+ELC ENG
+ENG LIB
+ENG JW
+ERC UB
+ESA SSB
+ESA CIR
+G F
+H I
+H ESA
+I A
+JW F
+JW G
+L SVR
+LIB SHA
+PC LIB
+PC ERC
+PC UB
+PC UA
+PC JW
+SHA ERC
+SHA CC
+SIRC CERL
+SIRC ELC
+SSB CIR
+SSB CC
+SVC SVS
+SVN SVC
+SW SVR
+SW SVN
+SW H
+UA JW
+UA F
+UB UA
+UP D
+UP G
+UP L
+
+

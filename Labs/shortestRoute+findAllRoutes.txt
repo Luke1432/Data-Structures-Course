@@ -1,0 +1,76 @@
+public List<List<Location>> findAllRoutes(Location start, Location end, Access access) {
+        List<List<Location>> allPaths = new ArrayList<>();
+        Set<Location> visited = new HashSet<>();
+        List<Location> currentPath = new ArrayList<>();
+        Stack<Location> stack = new Stack<>();
+        
+        stack.push(start);
+        currentPath.add(start);
+        
+        while (!stack.isEmpty()) {
+            Location current = stack.peek();
+            
+            if (current.equals(end)) {
+                allPaths.add(new ArrayList<>(currentPath));
+                stack.pop();
+                currentPath.remove(currentPath.size() - 1);
+                continue;
+            }
+
+            boolean foundUnvisitedNeighbor = false;
+            for (Location neighbor : adj.get(current)) {
+                if (!visited.contains(neighbor)) {
+                    stack.push(neighbor);
+                    currentPath.add(neighbor);
+                    visited.add(neighbor);
+                    foundUnvisitedNeighbor = true;
+                    break;
+                }
+            }
+
+            if (!foundUnvisitedNeighbor) {
+                stack.pop();
+                visited.remove(current);
+                currentPath.remove(currentPath.size() - 1);
+            }
+        }
+
+        return allPaths;
+    }
+
+
+    public List<Location> shortestRoute(Location start, Location end, Access access) {
+        Map<Location, Location> previous = new HashMap<>();
+        Map<Location, Integer> distance = new HashMap<>();
+        Queue<Location> queue = new LinkedList<>();
+
+        for (Location loc : adj.keySet()) {
+            distance.put(loc, Integer.MAX_VALUE);
+            previous.put(loc, null);
+        }
+        distance.put(start, 0);
+        queue.add(start);
+
+        while (!queue.isEmpty()) {
+            Location current = queue.poll();
+
+            if (current.equals(end)) {
+                break;
+            }
+
+            for (Location neighbor : adj.get(current)) {
+                if (distance.get(neighbor) == Integer.MAX_VALUE) {
+                    distance.put(neighbor, distance.get(current) + 1);
+                    previous.put(neighbor, current);
+                    queue.add(neighbor);
+                }
+            }
+        }
+
+        List<Location> path = new ArrayList<>();
+        for (Location at = end; at != null; at = previous.get(at)) {
+            path.add(at);
+        }
+        Collections.reverse(path);
+        return path.size() == 1 ? null : path;
+    }
